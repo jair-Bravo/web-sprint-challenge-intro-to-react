@@ -1,8 +1,11 @@
-import React from 'react';
-import react, { useEffect, useState } from 'react';
-import Character from './components/Character.js';
+// import React from 'react';
+import React, { useEffect, useState } from 'react';
+
 import axios from 'axios';
 import './App.css';
+
+import Character from './components/Character.js';
+import styled from 'styled-components';
 
 
 
@@ -20,8 +23,8 @@ const App = () => {
     .then((res) => {
       setCharacterInfo(res.data.results);
     })
-    .catch((error) => {
-      console.log(error);
+    .catch((err) => {
+      console.log(err);
     })
   }, [])
 
@@ -30,8 +33,8 @@ const App = () => {
       <h1 className="Header">Characters</h1>
       <h1 className="Header">Star Wars People</h1>
       {
-        characterInfo.map(ch) => {
-          return <styleCharacter key={ch.id} info={ch}/>
+        characterInfo.map(ch => {
+          return <Character key={ch.id} info={ch}/>
         })
       }
     </div>
