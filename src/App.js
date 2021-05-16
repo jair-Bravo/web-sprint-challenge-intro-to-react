@@ -7,8 +7,6 @@ import './App.css';
 import Character from './components/Character.js';
 import styled from 'styled-components';
 
-
-
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
@@ -33,7 +31,7 @@ const App = () => {
       <h1 className="Header">Characters</h1>
       <h1 className="Header">Star Wars People</h1>
       {
-        characterInfo.map(ch => {
+        characterInfo && characterInfo.map(ch => {
           return <Character key={ch.id} info={ch}/>
         })
       }
